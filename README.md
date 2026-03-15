@@ -10,7 +10,7 @@ It uses the modern `age-encryption` JavaScript API, bundled for browser usage.
 
 1. Download the extension (.xpi) here:
 
-   **[➡️ mage-extension.xpi](dist/mage-extension.xpi)**
+   **[➡️ mage-extension.xpi](mage-extension.xpi)**
 
 2. Open Firefox → `about:debugging#/runtime/this-firefox`
 3. Click **“Load Temporary Add-on…”**
