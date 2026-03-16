@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mage Extension</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin-bottom: 20px; }
+    .row { display: flex; gap: 8px; align-items: center; }
+    .row select { flex: 1; }
+    .row button { flex: 0; }
+    .iconButton {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: 1px solid #888;
+      background: #c00;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .iconButton img {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+    textarea { width: 100%; height: 100px; }
+    select, input { width: 100%; }
+    button { margin: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Mage - Age Verschlüsselung</h1>
+
+  <div class="section">
+    <h2>Verschlüsseln</h2>
+    <textarea id="message" placeholder="Nachricht eingeben"></textarea>
+    <select id="encryptKey"></select>
+    <button id="encrypt">Verschlüsseln und kopieren</button>
+  </div>
+
+  <div class="section">
+    <h2>Entschlüsseln</h2>
+    <textarea id="encryptedMessage" placeholder="Verschlüsselte Nachricht eingeben"></textarea>
+    <select id="decryptKey"></select>
+    <button id="decrypt">Entschlüsseln</button>
+    <textarea id="decryptedMessage" readonly placeholder="Entschlüsselte Nachricht"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>Eigene Schlüssel</h2>
+    <input type="text" id="keyName" placeholder="Name für Schlüsselpaar">
+    <button id="generateKey">Schlüsselpaar generieren</button>
+    <br>
+    <div class="row">
+      <select id="ownPublicKeys"></select>
+      <button id="deleteOwnKey" class="iconButton" title="Ausgewählten Schlüssel löschen">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAARklEQVR4nGNgGAUEACMB+f+UmsNCSOcJAvIW5NpMLR8wUmAoUWaykBMspAQXEwONAdOoBYTAaBARBKNBRBDQvCwaBSMAAABFvAYh0JyEsQAAAABJRU5ErkJggg==" alt="Löschen" width="24" height="24" />
+      </button>
+    </div>
+    <button id="copyPublicKey">Public Key kopieren</button>
+  </div>
+
+  <div class="section">
+    <h2>Fremde Public Keys</h2>
+    <input type="text" id="foreignName" placeholder="Name">
+    <input type="text" id="foreignPublicKey" placeholder="Public Key">
+    <button id="saveForeignKey">Speichern</button>
+    <br>
+    <div class="row">
+      <select id="foreignKeys"></select>
+      <button id="deleteForeignKey" class="iconButton" title="Ausgewählten Schlüssel löschen">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAARklEQVR4nGNgGAUEACMB+f+UmsNCSOcJAvIW5NpMLR8wUmAoUWaykBMspAQXEwONAdOoBYTAaBARBKNBRBDQvCwaBSMAAABFvAYh0JyEsQAAAABJRU5ErkJggg==" alt="Löschen" width="24" height="24" />
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="page.js"></script>
+</body>
+</html>
